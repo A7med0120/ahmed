@@ -6,7 +6,8 @@ app = Flask(__name__)
 Swagger(app)
 
 # Load the entire pipeline
-with open('grid.pkl', 'rb') as model_file:
+# Load the entire pipeline
+with open(r'C:\Users\MOBI LAP\OneDrive\Desktop\project\grid.pkl', 'rb') as model_file:
     grid = pickle.load(model_file)
 
 @app.route('/')
