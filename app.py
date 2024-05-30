@@ -1,17 +1,12 @@
-from flask import Flask, render_template, request, jsonify
-import numpy as np
+from flask import Flask, render_template, request
 import pickle
-import flasgger
 from flasgger import Swagger
-from sklearn.feature_extraction.text import CountVectorizer
-from sklearn.naive_bayes import MultinomialNB
 
 app = Flask(__name__)
 Swagger(app)
 
 # Load the entire pipeline
-# Load the entire pipeline
-with open(r'C:\Users\MOBI LAP\Downloads\Imdb-Sentiment-Analysis-Flask-Deployment--Heroku-master\Imdb-Sentiment-Analysis-Flask-Deployment--Heroku-master\grid.pkl', 'rb') as model_file:
+with open('grid.pkl', 'rb') as model_file:
     grid = pickle.load(model_file)
 
 @app.route('/')
